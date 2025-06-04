@@ -71,11 +71,13 @@ Todo Service: http://localhost:7070/swagger-ui/index.html
 🧪 Future Enhancements
 
 API Gateway integration
+
 Social login (OAuth2) using:
   - Google
   - Facebook
   - GitHub
   - Twitter
+    
 Unit & integration tests
 
 👨‍💻 Author
