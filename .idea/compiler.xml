@@ -9,7 +9,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
         <module name="Eureka-discovery-server" />
-        <module name="demo (1)" />
         <module name="gateway" />
       </profile>
       <profile name="Annotation profile for TodoApp" enabled="true">
@@ -19,6 +18,7 @@
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.26/lombok-1.18.26.jar" />
         </processorPath>
+        <module name="demo (1)" />
         <module name="demo" />
       </profile>
     </annotationProcessing>
