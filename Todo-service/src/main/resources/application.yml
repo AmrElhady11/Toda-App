@@ -7,28 +7,29 @@ eureka:
       defaultZone: http://localhost:5050/eureka
 
 
-
 spring:
   application:
-    name: authentication-service
+    name: Todo-service
   config:
     import: optional:configserver:http://localhost:4040
   datasource:
-    url: jdbc:mysql://localhost:3306/Authentication_DB
+    url: jdbc:mysql://localhost:3306/TodaApp_DB
     username: root
     password: admin
+
   jpa:
     hibernate:
       ddl-auto: update
+
   mail:
     host: smtp.gmail.com
-    port: 587
-    username: amr.elhady.programs@gmail.com
-    password: rsrn irvh kxiy zxxe
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-            required: true
+
+  security:
+    user:
+      name: none
+      password: none
+
+server:
+  port: 7070
+
+
