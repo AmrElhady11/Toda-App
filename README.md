@@ -12,7 +12,6 @@ It provides a structured and secure way to manage user authentication and todo t
 * [Getting Started](#getting-started)
 * [System Architecture](#system-architecture)
 * [System Features and Use Cases](#system-features-and-use-cases)
-* [Future Enhancements](#future-enhancements)
 * [Screenshots](#screenshots)
 
 ---
