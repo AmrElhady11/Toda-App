@@ -1,0 +1,35 @@
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:5050/eureka
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: authentication-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/Authentication_DB
+    username: root
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: amr.elhady.programs@gmail.com
+    password: rsrn irvh kxiy zxxe
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
