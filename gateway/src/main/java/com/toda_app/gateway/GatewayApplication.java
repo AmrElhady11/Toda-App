@@ -17,7 +17,7 @@ public class GatewayApplication {
 	@Bean
 	public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
 		return builder.routes()
-				.route("Todo-service", r -> r.path("/todos/**","/api/v1/tasks/**").uri("http://localhost:7070"))
+				.route("Todo-service", r -> r.path("/todo/**","/api/v1/tasks/**").uri("http://localhost:7070"))
 				.route("authentication-service", r -> r.path("/api/v1/auth/**","/api/v1/account/**","/auth/**").uri("http://localhost:8080"))
 				.build();
 	}
