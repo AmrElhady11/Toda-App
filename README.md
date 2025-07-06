@@ -1,4 +1,4 @@
-# ToDa App 📝🔐
+# ToDa App 
 
 **ToDa App** is a microservices-based backend project built using Java 17, Spring Boot 3, and Spring Cloud.
 It provides a structured and secure way to manage user authentication and todo tasks in a distributed architecture.
@@ -62,11 +62,6 @@ This project is composed of 5 main components:
 
    * Centralized external configuration for all services.
 
-```
-Client → Gateway → [Auth / Todo Service] ←→ Config Server
-                             ↑
-                         Eureka
-```
 
 ---
 
@@ -99,11 +94,11 @@ Client → Gateway → [Auth / Todo Service] ←→ Config Server
 
 ### Swagger - ToDo Service
 
-![Swagger Todo Service](https://raw.githubusercontent.com/AmrElhady11/Toda-App/main/assests/screenShot2.jpeg)
+![Swagger Todo Service](https://raw.githubusercontent.com/AmrElhady11/Toda-App/main/assests/screenShot1.jpeg)
 
 ### Swagger - Authentication Service
 
-![Swagger Auth Service](https://raw.githubusercontent.com/AmrElhady11/Toda-App/main/assests/screenshot1.jpeg)
+![Swagger Auth Service](https://raw.githubusercontent.com/AmrElhady11/Toda-App/main/assests/screenshot2.jpeg)
 
 
 ---
