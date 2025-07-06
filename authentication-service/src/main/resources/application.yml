@@ -3,10 +3,13 @@ eureka:
   instance:
     hostname: localhost
   client:
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: http://localhost:5050/eureka
 
-
+server:
+  port: 8080
 
 spring:
   application:
