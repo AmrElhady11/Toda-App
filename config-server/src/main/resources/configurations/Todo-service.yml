@@ -13,8 +13,8 @@ spring:
     name: Todo-service
   datasource:
     url: jdbc:mysql://localhost:3306/TodaApp_DB
-    username: root
-    password: admin
+    username:
+    password:
 
   jpa:
     hibernate:
