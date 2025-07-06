@@ -3,7 +3,7 @@
 **ToDa App** is a microservices-based backend project built using Java 17, Spring Boot 3, and Spring Cloud.
 It provides a structured and secure way to manage user authentication and todo tasks in a distributed architecture.
 
-This project follows best practices in microservices design, including service discovery, centralized configuration, secure communication via JWT, and routing through an API Gateway.
+
 
 ---
 
