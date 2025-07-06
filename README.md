@@ -94,11 +94,11 @@ This project is composed of 5 main components:
 
 ### Swagger - ToDo Service
 
-![Swagger Todo Service](https://raw.githubusercontent.com/AmrElhady11/Toda-App/main/assests/screenShot1.jpeg)
+![Swagger Todo Service](https://github.com/AmrElhady11/Toda-App/blob/main/assests/screenshot1.jpeg)
 
 ### Swagger - Authentication Service
 
-![Swagger Auth Service](https://raw.githubusercontent.com/AmrElhady11/Toda-App/main/assests/screenshot2.jpeg)
+![Swagger Auth Service](https://github.com/AmrElhady11/Toda-App/blob/main/assests/screenShot2.jpeg)
 
 
 ---
