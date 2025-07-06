@@ -1,0 +1,370 @@
+openapi: 3.0.1
+info:
+  title: Toda-App Unified API
+  description: OpenAPI specification for Authentication and Todo services in Toda-App
+  termsOfService: Terms of service
+  contact:
+    name: amr
+    email: amr.elhady@gmail.com
+  license:
+    name: licence name
+    url: https://url.com
+  version: "1.00"
+
+servers:
+  - url: http://localhost:8080
+    description: Authentication Service
+  - url: http://localhost:7070
+    description: Todo Service
+
+paths:
+
+  #authentication service
+
+  /api/v1/account/update:
+    put:
+      tags: [Account]
+      operationId: updateAccount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+
+  /api/v1/auth/register:
+    post:
+      tags: [Authentication]
+      operationId: register
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+
+  /api/v1/auth/authenticate:
+    post:
+      tags: [Authentication]
+      operationId: authenticate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthenticationRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/AuthenticationResponse'
+
+  /api/v1/account/change-password:
+    post:
+      tags: [Account]
+      operationId: changePassword
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangePasswordRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+
+  /auth/test:
+    get:
+      tags: [Testing]
+      operationId: test
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+
+  /api/v1/auth/regenerateOTP:
+    get:
+      tags: [Authentication]
+      operationId: regenerateOTP
+      parameters:
+        - name: email
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+
+  /api/v1/auth/checkToken:
+    get:
+      tags: [Authentication]
+      operationId: checkToken
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserInfoResponse'
+
+  /api/v1/auth/activate:
+    get:
+      tags: [Authentication]
+      operationId: activate
+      parameters:
+        - name: email
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: code
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+
+  /api/v1/account/delete:
+    delete:
+      tags: [Account]
+      operationId: deleteAccount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+
+
+
+
+
+
+
+  #todo service
+
+
+
+
+
+  /api/v1/tasks/update/{id}:
+    put:
+      tags: [Tasks]
+      operationId: updateItem
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ItemRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+
+  /api/v1/tasks/add:
+    post:
+      tags: [Tasks]
+      operationId: addItem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ItemRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+
+  /todo/test:
+    get:
+      tags: [test-controller]
+      operationId: testTodo
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+
+  /api/v1/tasks/search/{id}:
+    get:
+      tags: [Tasks]
+      operationId: searchItem
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ItemResponse'
+
+  /api/v1/tasks/delete/{id}:
+    delete:
+      tags: [Tasks]
+      operationId: deleteItem
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+
+components:
+  schemas:
+    # Auth-related schemas
+    UpdateRequest:
+      type: object
+      properties:
+        firstName: { type: string }
+        lastName: { type: string }
+        email: { type: string }
+
+    RegisterRequest:
+      type: object
+      properties:
+        firstName: { type: string }
+        lastName: { type: string }
+        password: { type: string }
+        email: { type: string }
+
+    AuthenticationRequest:
+      type: object
+      properties:
+        email: { type: string }
+        password: { type: string }
+
+    AuthenticationResponse:
+      type: object
+      properties:
+        token: { type: string }
+
+    ChangePasswordRequest:
+      type: object
+      properties:
+        oldPassword: { type: string }
+        newPassword: { type: string }
+        confirmPassword: { type: string }
+
+    UserInfoResponse:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int32
+        email: { type: string }
+        roles:
+          type: array
+          items:
+            type: string
+            enum: [USER, ADMIN]
+
+    DeleteRequest:
+      type: object
+      properties:
+        email: { type: string }
+        password: { type: string }
+
+    ItemRequest:
+      type: object
+      properties:
+        title: { type: string }
+        description: { type: string }
+        priority:
+          type: string
+          enum: [LOW, MEDIUM, HIGH, CRITICAL]
+        status:
+          type: string
+          enum: [IN_PROGRESS, DONE, CANCELLED]
+
+    ItemResponse:
+      type: object
+      properties:
+        itemId:
+          type: integer
+          format: int32
+        title: { type: string }
+        description: { type: string }
+        priority:
+          type: string
+          enum: [LOW, MEDIUM, HIGH, CRITICAL]
+        status:
+          type: string
+          enum: [IN_PROGRESS, DONE, CANCELLED]
