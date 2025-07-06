@@ -35,8 +35,7 @@ It provides a structured and secure way to manage user authentication and todo t
 * [Java 17+]
 * [Maven]
 * MySQL 
-* Postman (optional for testing)
-* IntelliJ IDEA (recommended)
+* Postman
 
 ---
 
